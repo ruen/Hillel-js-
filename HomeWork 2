@@ -1,0 +1,114 @@
+'use strict';
+
+// 1
+
+// let string1 = 'Ytube';
+// let string2 = 'ou';
+// let sliceString = '';
+// console.log(sliceString); // --> YouTube
+
+let string1 = 'Ytube';
+let string2 = 'ou';
+let sliceString = string1.slice(0, 1) + string2 + (string1.slice(1, 2).toUpperCase()) + string1.slice(2);
+console.log(sliceString);
+
+// end 1
+
+
+// 2
+
+// let numbers = [25, 1];
+// let project = 'проект';
+// let team = 'команда';
+// let howMuch = 'Сколько';
+// let str = 'нужно программистов чтобы сделать проект ?';
+// let sentence = '';
+// console.log(sentence) // --> собрать предложение
+
+let numbers = [25, 1];
+let project = 'проекта';
+let team = 'команда';
+let howMuch = 'Сколько';
+let str = 'нужно программистов чтобы сделать проект ?';
+let sentence = `${howMuch} ${str} Для ${project} ${str.slice(0, 4) + 'a'} ${team} из ${numbers.slice(0, 1)} ${str.slice(6, 19)}.`;
+console.log(sentence)
+
+// end 2
+
+
+// 3
+
+// Напишите функцию fizzBuzz, которая будет возвращать
+// 'Fizz' если передаваемый параметр кратен 3,
+// 'Buzz', если передаваемый параметр кратен 5,
+// 'FizzBuzz' - если параметр кратен 3 и 5.
+// Если передаваемое число не кратно 3 или 5, то вернуть указанный параметр
+
+function fizzBuzz (num){
+    if (num % 3 === 0 & num % 5 === 0) return 'FizzBuzz'
+    if (num % 3 === 0) return 'Fizz'
+    if (num % 5 === 0) return 'Buzz'
+}
+
+// end 3
+
+
+// 4
+
+// Напишите функцию которая будет возвращать объект
+// с свойством name, а значением будет первый аргумент функции
+
+function returnFn (someValue){
+    return ({name: someValue});
+}
+console.log(returnFn('Alex'));
+
+// end 4
+
+
+// 5
+
+// Функция будет принимать 1 аргумент
+// - ОБЪЕКТ у которого
+// будет свойство name
+// и возвращать новый объект изменяя свойство name
+// в большой регистр
+
+function fn (someValue){
+    let newObject = {name: someValue.toUpperCase()}
+    return (newObject);
+}
+fn ('Alex');
+
+// end 5
+
+
+// 6
+
+// Напишите функцию которая принимает в качестве аргумента массив и элемент массива, и добавляет элемент в конец массива (без метода push)
+
+let arrGreate = (newArr, obj) => {
+    newArr[newArr.length] = obj;
+    return newArr;
+}
+console.log(arrGreate(['car', 'paper', 'pen'], 'apple'));
+
+// end 6
+
+
+// 7
+
+// Напишите функцию которая принимает 3 аргумента, третий аргумент - это объект.
+// Функция создает новый объект и добавляет ключ - это первый аргумент, а значение - второй аргумент Проверяет если есть свойство name в переданном объекте, тогда добавляет данное свойство и возвращает новый объект
+
+let newKey = (key, value, newName) => {
+    let newObj = {};
+    newObj[key] = value;
+    if ('name' in newName) {
+        newObj.name = newName.name;
+        return newObj;
+    }
+}
+console.log(newKey('hair', 'black', { stats: 'strong', name: 'Alexey', weight: 92 }));
+
+// end 7
